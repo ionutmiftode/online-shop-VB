@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Magazin Sportiv Online</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <div id="bagIconContainer">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 22 22">
+				<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 
+                   2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 
+                   0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 
+                   0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+			</svg>
+			<div id="bagCounterId">
+			</div>
+	  </div>
+	  <h1>OptimShop</h1>
+      <nav>
+        <ul>
+          <li class="categories"><a href="productsPage.html" title="All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" >
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+            </a></li>
+          <li>Produse</li>
+          <li class="home"><a href="index.html" title="Home Page">Acasa</a></li>
+          <li class="about"><a href="about.html" title="About Page">Despre noi</a></li>
+          <li class="contact"><a href="contact.html" title="Contact Page">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+		<div>
+			<select id="selectId">
+				<option value="alphabetical">Nume: A->Z</option>
+				<option value="price">Dupa pret</option>
+			</select>
+		</div>
+		<section class="content1" id="section1">
+			<article id = "article1">  <h4>Biciclete</h4> </article>
+		</section>
+		<section id="productsInside"></section>
+    </main>
+    <aside>
+      <h3>Produse</h3>
+      <div id="products">
+        <ul>
+          <li><a href="bikes.html">Biciclete</a></li>
+          <li><a href="clothes.html">Imbracaminte</a></li>
+		  <li><a href="footwear.html">Incaltaminte</a></li>
+		  <li><a href="astronomy.html">Astronomie</a></li>
+		  <li><a href="optics.html">Optica</a></li>
+        </ul>
+      </div>
+    </aside>
+	<div id="compareContainer"></div> 
+
+
+    <footer>
+      <p>&copy; 2017</p>
+    </footer>
+    <script type="text/javascript" src="productsPage.js"></script>
+  </body>
+</html>
