@@ -1,9 +1,9 @@
 var bagCounter = 0;
 //create nodes
 var addToBasket = document.getElementById("bagCounterId");
-var ProductsRender = document.getElementById("productsInside");
+var ProductsRender = document.getElementById("main");
 var compareContainer = document.getElementById("compareContainer");
-var selected = document.getElementById("selectId");
+
 
 //create products objects
 var product = [{
@@ -74,16 +74,18 @@ var product = [{
 	category: "Biciclete",
   },{
 	id: 11,
-	brand: "Sprint",
-	name: "GTS 29\" 2017",
-	price: "1799",
-	category: "Biciclete",
+	brand: "Celestron",
+	name: "Celestron Kids 50mm Refractor with Case",
+	price: "200",
+	category: "Astronomie",
+	//https://cdn.shopify.com/s/files/1/1935/4371/products/22015_celestron_kids_50mm_refractor_1_570x380@2x.jpg
   },{
 	id: 12,
-	brand: "Trek",
-	name: "Marlin 7 2017",
-	price: "2980",
-	category: "Biciclete",
+	brand: "Celestron",
+	name: "Cometron 7x50",
+	price: "200",
+	category: "Astronomie",
+	//https://cdn.shopify.com/s/files/1/1935/4371/products/71198_cometron_binos_7x50_1_570x380@2x.jpg
   }]
 
 //insert product inside to an element
@@ -95,7 +97,7 @@ function renderProduct(product) {
   var node3 = node1.cloneNode(false);
   var textProductBrand = document.createTextNode(product.brand);
   var textProductName = document.createTextNode(product.name);
-  var textProductPrice = document.createTextNode(product.price + " lei"); 
+  var textProductPrice = document.createTextNode(product.price + " lei");
   var buttonNode = document.createElement("button");
   var myImage = new Image(200,150);  //Image(width, height) //equivalent to document.createElement('img')
 	myImage.src = product.img;
@@ -104,9 +106,11 @@ function renderProduct(product) {
   var checkBoxNode = document.createElement("input");
 	checkBoxNode.type = "checkbox";
 	checkBoxNode.className = "compareButtonClass";
-	checkBoxNode.id = "compareButtonId";
-  
-  buttonNode.addEventListener('click', addToBasketFunction);
+	checkBoxNode.dataset.checkboxId = product.id;
+
+
+
+	buttonNode.addEventListener('click', addToBasketFunction);
   nodeArticle.appendChild(myImage);
   nodeArticle.appendChild(checkBoxNode);
   nodeArticle.appendChild(node1);
@@ -124,7 +128,7 @@ function renderProduct(product) {
 //function for incrementing the basket when the button is pressed using -event delegation-
 var addToBasketFunction = function(event) {
   if (event.target.innerHTML = "Add to Basket!") {
-	  bagCounter++; 
+	  bagCounter++;
   }
   addToBasket.textContent = bagCounter;
 }
@@ -138,36 +142,27 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", function() {
 	init();
-	console.log(ProductsRender.childElementCount);
 	addToBasket.innerHTML = bagCounter;
   //EventListener for showing the compareContainer when one checkbox is checked
 	var compareButton = document.getElementsByClassName('compareButtonClass');
 		for (var i=0; i < compareButton.length; i++) {
 		  compareButton[i].addEventListener("change", function(event) {
 			if(event.target.checked) {
+				var productDiv = document.createElement('div');
+				productDiv.innerHTML = "product";
+				productDiv.dataset.compareProductId = event.target.dataset.checkboxId;
+				compareContainer.appendChild(productDiv);
 				compareContainer.style.visibility = "visible";
-				var product_img_div = document.createElement('div');
-				var product_img = new Image(50,40);
+				// var product_img_div = document.createElement('div');
+				// var product_img = new Image(50,40);
 			}
-			if(event.target.checked == false) {
-				compareContainer.style.visibility = "hidden";
+			else {
+				var product = document.querySelector("[data-compare-product-id='"+event.target.dataset.checkboxId+"']");
+				 product.remove();
+				 if(!compareContainer.hasChildNodes()) {
+					 compareContainer.style.visibility = "hidden";
+				 }
 			}
 		  });
 		}
-	selected.addEventListener('change', function(){
-		console.log(ProductsRender.childElementCount);
-		//delete all products
-		if(ProductsRender.hasChildNodes()){
-			ProductsRender.parentNode.removeChild(ProductsRender);
-		}
-		//sorting
-		var sortedProducts = product.sort(function(product){
-			
-		});
-	});
-	console.log(ProductsRender.childElementCount);
 });
-
-
-	  
-
