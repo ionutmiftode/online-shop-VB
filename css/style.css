@@ -4,7 +4,7 @@ body {
   margin: 0;
   background-color: #E3F2FD;
   /* border: 1px solid black; */
-  height: 150%;
+  height: 300%;
 }
 
 html {
@@ -48,7 +48,7 @@ section {
 	width: 99.6%;
 	height: auto;
 }
-header { 
+header {
   position: absolute;
   top: 0px;
 }
@@ -156,7 +156,7 @@ article button {
 	position: fixed;
 	right: 0;
 	top: 200px;
-	visibility: hidden;
+	visibility: visible; 
 	background-color: #fff;
 	height: 160px;
 	width: 50px;
@@ -188,5 +188,5 @@ article button {
 	/* height: 100px; */
 	/* width: 100px;  */
 	float: left;
-	
+
 }

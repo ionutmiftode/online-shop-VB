@@ -8,13 +8,13 @@ var compareContainer = document.getElementById('compareContainer');
 function getProducts() {
   return [{
     //category: "Biciclete"
-	img: "images/Trance-1-EU.jpg",
+	img: "https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_us/bikes/models/xxl/2016/Trance-275-3-Black.jpg",
 	name: "Giant Trance 27.5 2016",
 	price: 6999,
 	full: function() {return this.name + " pret: " + this.price;},
   },{
     //category: "Biciclete",
-	img: "images/Kross_dust_2_0.jpg",
+	img: "https://www.kross.pl/sites/default/files/styles/bike_big/public/bikes/2017/trail/dust_2_0_black_lime_matte.png",
 	name: "Kross Dust 2.0 2017", 
 	price: 6290,
 	full: function() {return this.name + " pret: " + this.price;},
