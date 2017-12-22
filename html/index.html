@@ -3,17 +3,22 @@
   <head>
     <title>Magazin Sportiv Online</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
 
   <body>
     <header>
-      <div id="bagIconContainer">
+      <div id="bagIconContainer" class="popup">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 22 22">
-				<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 
-                   2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 
-                   0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 
+				<path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35
+                   2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75
+                   0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1
                    0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                   <!-- Added popup for total price -bag.js -->
+                     <div id="bag-popup" class="popuptext">
+                       <div>Total</div>
+                       <div id="totalPrice"></div>
+                     </div>
 			</svg>
 			<div id="bagCounterId">
 			</div>
@@ -25,7 +30,7 @@
             <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
             </a></li>
           <li>Produse</li>
-          <li class="home"><a href="Online Shop 1.html" title="Home Page">Acasa</a></li>
+          <li class="home"><a href="index.html" title="Home Page">Acasa</a></li>
           <li class="about"><a href="about.html" title="About Page">Despre noi</a></li>
           <li class="contact"><a href="contact.html" title="Contact Page">Contact</a></li>
         </ul>
@@ -37,8 +42,8 @@
       <section class="content1" id="section1">
 		<div id="slider-container">
 			<div id="slider">
-				<div class="slide"><img src="images/Trance-1-EU.jpg" width="200" height="100"></div>
-				<div class="slide"><img src="images/Kross_dust_2_0.jpg" width="200" height="100"></div>
+				<div class="slide"><img src="https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_us/bikes/models/xxl/2016/Trance-275-3-Black.jpg" width="200" height="100"></div>
+				<div class="slide"><img src="https://www.kross.pl/sites/default/files/styles/bike_big/public/bikes/2017/trail/dust_2_0_black_lime_matte.png" width="200" height="100"></div>
 				<div class="slide" style="background-color: red; width: 200px; height: 100px;"></div>
 			</div>
 		</div>
@@ -56,12 +61,13 @@
         </ul>
       </div>
     </aside>
-	<div id="compareContainer"></div> 
+	<div id="compareContainer"></div>
 
 
     <footer>
       <p>&copy; 2017</p>
     </footer>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="../js/bag.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
   </body>
 </html>
