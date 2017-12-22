@@ -1,10 +1,12 @@
 var bagCounter = 0;
 //create nodes
+
 var addToBag = document.getElementById("bagCounterId");
 var mainId = document.getElementById("main");
 var compareContainer = document.getElementById("compareContainer");
 var bagIconPopup = document.getElementById("bagIconContainer");
 var bagDivPopup = document.getElementById("bag-popup");
+
 
 //create products objects
 function getProducts() {
@@ -27,7 +29,9 @@ function renderProduct(product) {
   var node1 = document.createElement("h5");
   var node2 = node1.cloneNode(false);
   var textProductName = document.createTextNode(product.name);
+
   var textProductPrice = document.createTextNode(product.price + " lei");
+
   var buttonNode = document.createElement("button");
   var myImage = new Image(200,150);  //Image(width, height) //equivalent to document.createElement('img')
 	myImage.src = product.img;
@@ -38,14 +42,18 @@ function renderProduct(product) {
 	checkBoxNode.className = "compareButtonClass";
 	checkBoxNode.id = "compareButtonId";
 
+
   buttonNode.addEventListener('click', addToBagFunction);
+
   nodeSection.appendChild(nodeArticle);
   nodeArticle.appendChild(myImage);
   nodeArticle.appendChild(checkBoxNode);
   nodeArticle.appendChild(node1);
   nodeArticle.appendChild(node2);
   nodeArticle.appendChild(buttonNode);
+
   buttonNode.textContent = "Add to Bag!";
+
   node1.appendChild(textProductName);
   node2.appendChild(textProductPrice);
   mainId.appendChild(nodeSection);
@@ -63,8 +71,10 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", function() {
   init();
+
   addToBag.innerHTML = bagCounter;
   bagIconContainer.addEventListener('click', popupFunction);
+
   //EventListener for showing the compareContainer when one checkbox is checked
 	var compareButton = document.getElementsByClassName('compareButtonClass');
 	  for (var i=0; i < compareButton.length; i++) {
@@ -73,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				compareContainer.style.visibility = "visible";
 				var product_img_div = document.createElement('div');
 				var product_img = new Image(50,40);
+
 			}
 			if(event.target.checked == false) {
 				compareContainer.style.visibility = "hidden";
@@ -80,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		  });
 	  }
 });
+
 
 //function for incrementing the Bag when the button is pressed using -event delegation-
   var addToBagFunction = function(event) {
@@ -94,3 +106,4 @@ document.addEventListener("DOMContentLoaded", function() {
 var popupFunction = function() {
   bagDivPopup.classList.toggle("show");
 };
+

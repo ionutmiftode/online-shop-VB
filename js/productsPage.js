@@ -1,5 +1,6 @@
 var bagCounter = 0;
 //create nodes
+
 var addToBag = document.getElementById("bagCounterId");
 var ProductsRender = document.getElementById("main");
 var compareContainer = document.getElementById("compareContainer");
@@ -110,6 +111,7 @@ function renderProduct(product) {
 
 
 
+
 	buttonNode.addEventListener('click', addToBagFunction);
   nodeArticle.appendChild(myImage);
   nodeArticle.appendChild(checkBoxNode);
@@ -117,7 +119,9 @@ function renderProduct(product) {
   nodeArticle.appendChild(node2);
   nodeArticle.appendChild(node3);
   nodeArticle.appendChild(buttonNode);
+
   buttonNode.textContent = "Add to Bag!";
+
   node1.appendChild(textProductBrand);
   node2.appendChild(textProductName);
   node3.appendChild(textProductPrice);
@@ -125,12 +129,14 @@ function renderProduct(product) {
   ProductsRender.appendChild(nodeSection);
 }
 
+
 //function for incrementing the Bag when the button is pressed using -event delegation-
 var addToBagFunction = function(event) {
   if (event.target.innerHTML = "Add to Bag!") {
 	  bagCounter++;
   }
   addToBag.textContent = bagCounter;
+
 }
 
 //create a number of elements equal to the # of products
@@ -142,7 +148,9 @@ function init() {
 
 document.addEventListener("DOMContentLoaded", function() {
 	init();
+
 	addToBag.innerHTML = bagCounter;
+
   //EventListener for showing the compareContainer when one checkbox is checked
 	var compareButton = document.getElementsByClassName('compareButtonClass');
 		for (var i=0; i < compareButton.length; i++) {
