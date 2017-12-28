@@ -12,11 +12,13 @@ var bagDivPopup = document.getElementById("bag-popup");
 function getProducts() {
   return [{
     //category: "Biciclete"
-	img: "https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_us/bikes/models/xxl/2016/Trance-275-3-Black.jpg",
+  productId: '0',
+  img: "https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_us/bikes/models/xxl/2016/Trance-275-3-Black.jpg",
 	name: "Giant Trance 27.5 2016",
 	price: 6999,
   },{
     //category: "Biciclete",
+  productId: '1',
 	img: "https://www.kross.pl/sites/default/files/styles/bike_big/public/bikes/2017/trail/dust_2_0_black_lime_matte.png",
 	name: "Kross Dust 2.0 2017",
 	price: 6290,
@@ -97,7 +99,16 @@ document.addEventListener("DOMContentLoaded", function() {
   var addToBagFunction = function(event) {
 	  if (event.target.innerHTML = "Add to Bag!") {
 		  bagCounter++;
-      bag.products.push(getProducts()[1].price);
+      var productId = event.target.dataset.productId;
+      console.log(productId);
+      var products = getProducts();
+      console.log(products);
+      var product = products.find(function(p) {
+        return p.id === productId;
+      });
+      console.log(product);
+      bag.products.push(products);
+      bag.updateTotal();
 	  }
 	  addToBag.textContent = bagCounter;
   };
@@ -106,4 +117,3 @@ document.addEventListener("DOMContentLoaded", function() {
 var popupFunction = function() {
   bagDivPopup.classList.toggle("show");
 };
-

@@ -202,7 +202,7 @@ article button {
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 8px 0;
+    /* padding: 7px 0; */
     position: absolute;
     z-index: 1;
     top: 100%;
@@ -211,4 +211,15 @@ article button {
 }
 .popup .show {
   visibility: visible;
+}
+
+#totalPrice {
+  position: relative;
+  left: 5px;
+  top: -1px;
+}
+.divTotalClass{
+  position: relative;
+  left: -100px;
+  top: -1px;
 }
