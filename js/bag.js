@@ -1,23 +1,18 @@
-var price = 0;
 var totalDiv = document.getElementById('totalPrice');
 var bag = {
+  price: 0,
   popup: document.getElementById('bag-popup'),
   products: [],
   getTotalPrice: function() {
-    console.log(this);
-    console.log(this.products);
+    var lastProductIndex = this.products.length - 1;
     this.products.forEach(function(p){
-      price += p.price;
-      console.log(p.price);
-      })
-      return price;
-      console.log(price);
+      //price += p.price;
+      bag.price += bag.products[lastProductIndex].price;
+    })
+    return this.price;
   },
   updateTotal: function() {
     var totalPrice = this.getTotalPrice();
-    console.log(this);
-    console.log(this.getTotalPrice());
     totalDiv.innerHTML = totalPrice;
-    console.log(totalPrice);
   }
 }

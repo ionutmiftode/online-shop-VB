@@ -15,13 +15,13 @@ function getProducts() {
   id: 0,
   img: "https://giantcdn-qu2qwwv2de7wv85rz.stackpathdns.com/remote/www.giant-bicycles.com/_upload_us/bikes/models/xxl/2016/Trance-275-3-Black.jpg",
 	name: "Giant Trance 27.5 2016",
-	price: 6999,
+	price: 6,
   },{
     //category: "Biciclete",
   id: 1,
 	img: "https://www.kross.pl/sites/default/files/styles/bike_big/public/bikes/2017/trail/dust_2_0_black_lime_matte.png",
 	name: "Kross Dust 2.0 2017",
-	price: 6290,
+	price: 5,
   }];
 }
 //insert product inside to an element
@@ -66,6 +66,7 @@ function renderProduct(product) {
 //create a number of elements equal to the # of products
 function init() {
   var products = getProducts();
+  console.log(products);
   for (i = 0; i < products.length; i++) {
 	renderProduct(products[i]);
   }
@@ -100,14 +101,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	  if (event.target.innerHTML = "Add to Bag!") {
 		  bagCounter++;
       var productId = parseInt(event.target.dataset.productId, 10);
-      console.log(productId);
       var products = getProducts();
       console.log(products);
       var product = products.find(function(p) {
         return p.id === productId;
       });
       console.log(product);
-      bag.products.push(products);
+      bag.products.push(product);
       bag.updateTotal();
 	  }
 	  addToBag.textContent = bagCounter;
