@@ -5,10 +5,7 @@ var bag = {
   products: [],
   getTotalPrice: function() {
     var lastProductIndex = this.products.length - 1;
-    this.products.forEach(function(p){
-      //price += p.price;
-      bag.price += bag.products[lastProductIndex].price;
-    })
+      this.price += this.products[lastProductIndex].price;
     return this.price;
   },
   updateTotal: function() {
